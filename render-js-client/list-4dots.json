@@ -1,0 +1,79 @@
+{
+ "commandlist": {
+   "name": "clist1", 
+   "commands": [
+    {
+     "command": {
+      "cmd": "dot", 
+      "type": "create", 
+      "name": "f1", 
+      "par": { 
+       "diameter": 20, 
+       "position": { 
+        "x": 50, 
+        "y": 50 
+        }, 
+       "depth": 1, 
+       "color": { 
+        "r": 1, "g": 0, "b": 0 
+        } 
+       }
+      }
+     },
+    {
+     "command": {
+      "cmd": "dot", 
+      "type": "create", 
+      "name": "f2", 
+      "par": { 
+       "diameter": 20, 
+       "position": { 
+        "x": 50, 
+        "y": -50 
+        }, 
+       "depth": 1, 
+       "color": { 
+        "r": 0, "g": 1, "b": 0 
+        } 
+       }
+      }
+     },
+    {
+     "command": {
+      "cmd": "dot", 
+      "type": "create", 
+      "name": "f3", 
+      "par": { 
+       "diameter": 20, 
+       "position": { 
+        "x": -50, 
+        "y": -50 
+        }, 
+       "depth": 1, 
+       "color": { 
+        "r": 0, "g": 0, "b": 1 
+        } 
+       }
+      }
+     },
+    {
+     "command": {
+      "cmd": "dot", 
+      "type": "create", 
+      "name": "f4", 
+      "par": { 
+       "diameter": 20, 
+       "position": { 
+        "x": -50, 
+        "y": 50 
+        }, 
+       "depth": 1, 
+       "color": { 
+        "r": 1, "g": 1, "b": 1 
+        } 
+       }
+      }
+     }     
+    ]
+  }
+} 

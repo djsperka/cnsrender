@@ -1,0 +1,7 @@
+{
+  "command": 
+  {
+    "cmd": "release", 
+    "names": [ "f2", "f3" ] 
+  }
+}

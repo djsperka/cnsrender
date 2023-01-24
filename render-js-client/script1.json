@@ -1,0 +1,122 @@
+{
+  "command": 
+  {
+    "cmd": "script",
+    "type": "run", 
+	"name": "fixation",
+	"par": {
+		"init": { 
+			"commands": [
+				{
+					"command": {
+						"cmd": "background",
+						"par":	{
+							"color": { "r": 0, "g": 0, "b": 0 }
+						}
+					}
+				},
+				{
+					"command": {
+						"cmd": "dot", 
+						"type": "create", 
+						"name": "fixpt", 
+						"par": { 
+							"diameter": 20, 
+							"position": { 
+								"x": 0, 
+								"y": 0 
+							}, 
+							"depth": 1, 
+							"color": { 
+								"r": 1, "g": 0, "b": 0 
+							} 
+						}
+					}
+				},
+				{
+					"command": {
+						"cmd": "onoff",
+						"type": "off",
+						"name": "fixpt"
+					}
+				},
+				{
+					"command": {
+						"cmd": "trigger",
+						"type": "create", 
+						"name": "tFIXON",
+						"par":	{
+							"id": 101,
+							"mask": "0x01",
+							"bits": "0x01",
+							"flags": "0x0",
+							"commandlist": "clFIXON"
+						  }
+					}
+				},
+				{
+					"command": {
+						"cmd": "trigger",
+						"type": "create", 
+						"name": "tFIXOFF",
+						"par":	{
+							"id": 102,
+							"mask": "0x01",
+							"bits": "0x00",
+							"flags": "0x0",
+							"commandlist": "clFIXOFF"
+						}
+					}
+				},
+				{
+					"command": {
+						"cmd": "commandlist",
+						"type": "create",
+						"name": "clFIXON",
+						"par": {
+							"command": {
+								"cmd": "onoff", 
+								"type": "on", 
+								"name": "fixpt" 
+							}
+						}
+					}
+				},
+				{
+					"command": {
+						"cmd": "commandlist",
+						"type": "create",
+						"name": "clFIXOFF",
+						"par": {
+							"command": {
+								"cmd": "onoff", 
+								"type": "off", 
+								"name": "fixpt" 
+							}
+						}
+					}
+				}
+			]
+		},
+		"cleanup": { 
+			"commands": [
+				{
+					"command": {
+						"cmd": "release",
+						"name": "fixpt"
+					}
+				},
+				{
+					"command": {
+						"cmd": "background",
+						"par":	{
+							"color": { "r": 0.5, "g": 0.5, "b": 0.5 }
+						}
+					}
+				}
+			]
+		}
+	}
+  }
+}
+

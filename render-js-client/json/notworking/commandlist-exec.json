@@ -1,0 +1,7 @@
+{
+	"command": {
+		"cmd": "commandlist",
+		"type": "exec",
+		"name": "clist1"
+		}
+} 

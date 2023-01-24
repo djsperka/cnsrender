@@ -1,0 +1,54 @@
+{
+ "commandlist": {
+   "commands": [
+    {
+     "command": {
+      "cmd": "dot", 
+      "type": "update", 
+      "name": "f1", 
+      "par": { 
+       "color": { 
+        "r": 0, "g": 0, "b": 0 
+        } 
+       }
+      }
+     },
+    {
+     "command": {
+      "cmd": "dot", 
+      "type": "update", 
+      "name": "f2", 
+      "par": { 
+       "color": { 
+        "r": 0, "g": 0, "b": 0 
+        } 
+       }
+      }
+     },
+    {
+     "command": {
+      "cmd": "dot", 
+      "type": "update", 
+      "name": "f3", 
+      "par": { 
+       "color": { 
+        "r": 0, "g": 0, "b": 0 
+        } 
+       }
+      }
+     },
+    {
+     "command": {
+      "cmd": "dot", 
+      "type": "update", 
+      "name": "f4", 
+      "par": { 
+       "color": { 
+        "r": 0, "g": 0, "b": 0 
+        } 
+       }
+      }
+     }
+    ]
+  }
+}

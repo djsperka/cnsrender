@@ -1,0 +1,57 @@
+{
+  "commands": [
+    { "command": 
+		  { 
+			"cmd": "trigger",
+			"type": "create", 
+			"name": "t0",
+			"par":	{
+				"id": 100,
+				"mask": "0x01",
+				"bits": "0x01",
+				"flags": "0x0"
+			  }
+		  }
+	},
+    { "command": 
+		  { 
+			"cmd": "trigger",
+			"type": "create", 
+			"name": "t1",
+			"par":	{
+				"id": 101,
+				"mask": "0x01",
+				"bits": "0x0",
+				"flags": "0x0"
+			  }
+		  }
+	},
+    { "command": 
+		  { 
+			"cmd": "trigger",
+			"type": "create", 
+			"name": "t2",
+			"par":	{
+				"id": 102,
+				"mask": "0x02",
+				"bits": "0x02",
+				"flags": "0x0"
+			  }
+		  }
+	},
+    { "command": 
+		  { 
+			"cmd": "trigger",
+			"type": "create", 
+			"name": "t3",
+			"par":	{
+				"id": 103,
+				"mask": "0x02",
+				"bits": "0x0",
+				"flags": "0x0"
+			  }
+		  }
+	}
+	]
+}
+

@@ -1,0 +1,13 @@
+{
+  "command": 
+  {
+    "cmd": "grating",
+    "type": "update", 
+    "name": "g0",
+    "par":	{
+      "orientation": 135, 
+      "sf": 0.06, 
+      "tf": 0.002
+      }
+  }
+}

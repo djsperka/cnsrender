@@ -1,0 +1,48 @@
+{
+	"command": 
+	{
+		"cmd": "units",
+		"type": "length", 
+		"default_units": "dg",
+		"screen_resolution": "400x300",
+		"screen_size": "120x177",
+		"screen_distance": 500
+	}
+},
+{
+	"command": {
+		"cmd": "dot",
+		"type": "create",
+		"name": "fixptLeft",
+		"viewport": "left",
+		"par": {
+			"diameter": 0.5,
+			"position": "0,0",
+			"depth": 1,
+			"color": "green"
+		}
+	}
+},
+{
+	"command": {
+		"cmd": "dot",
+		"type": "create",
+		"name": "fixptRight",
+		"viewport": "right",
+		"par": {
+			"diameter": 0.2,
+			"position": "0,0",
+			"depth": 1,
+			"color": "blue"
+		}
+	}
+},
+{
+	"command": {
+		"cmd": "grating",
+		"type": "create",
+		"name": "g0Left",
+		"viewport": "left",
+		"spec": "1,1,200,200,0,0,100,.01,.005,45,0,bw,s,e,2"
+	}
+}

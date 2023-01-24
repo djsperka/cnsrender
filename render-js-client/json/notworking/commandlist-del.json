@@ -1,0 +1,7 @@
+{
+	"command": {
+		"cmd": "commandlist",
+		"type": "del",
+		"name": "clist1"
+		}
+}

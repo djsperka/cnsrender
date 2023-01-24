@@ -1,0 +1,10 @@
+{
+  "command": 
+  {
+    "cmd": "onoff",
+    "type": "off", 
+	"name": "fixpt"
+  },
+  "array": [ { "1": "2"}, [1,2,3] ]
+}
+

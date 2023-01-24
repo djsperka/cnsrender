@@ -1,0 +1,16 @@
+{
+  "command": 
+  {
+    "cmd": "trigger",
+    "type": "create", 
+    "name": "t0",
+    "par":	{
+		"id": 101,
+		"mask": "0xff",
+		"bits": "0x0e",
+		"flags": "0x14",
+		"commandlist": "clist1"
+      }
+  }
+}
+

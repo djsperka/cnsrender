@@ -1,0 +1,22 @@
+{
+  "command": 
+  {
+    "cmd": "grating",
+    "type": "update", 
+    "name": "g0",
+    "par":	{
+      "orientation": [ 135, 90, 45, 0],
+      "sf": 0.06, 
+      "tf": 0.002
+      }
+  }
+}
+
+{ "update": {
+	"type": "grating",
+	"name": "g0",
+	"par": {
+		"contrast": [25,50,75,100]
+		}
+	}
+}

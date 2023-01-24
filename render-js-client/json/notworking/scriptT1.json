@@ -1,0 +1,256 @@
+{
+	"command": {
+		"cmd": "script",
+		"type": "run",
+		"name": "tuning",
+		"par": {
+			"init": {
+				"commands": [
+					{
+						"command": 
+						{
+							"cmd": "reset"
+						}
+					},
+					{
+						"command": {
+							"cmd": "background",
+							"par": {
+								"color": "(60/70/90)"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "dot",
+							"type": "create",
+							"name": "fixpt",
+							"spec": "0,0,25,green,1"
+						}
+					},
+					{
+						"command": {
+							"cmd": "grating",
+							"type": "create",
+							"name": "g0",
+							"spec": "150,0,200,200,0,0,100,.01,.005,90,0,bw,q,e,2"
+						}
+					},
+					{
+						"command": {
+							"cmd": "onoff",
+							"type": "off",
+							"name": "fixpt,g0",
+							"digout": { "bits":"0x0", "mask":"0x700" }
+						}
+					},
+					{
+						"command": {
+							"cmd": "trigger",
+							"type": "create",
+							"name": "tFIXON",
+							"par": {
+								"id": 101,
+								"mask": "0x01",
+								"bits": "0x01",
+								"flags": "0x0",
+								"commandlist": "clFIXON"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "trigger",
+							"type": "create",
+							"name": "tFIXOFF",
+							"par": {
+								"id": 102,
+								"mask": "0x01",
+								"bits": "0x00",
+								"flags": "0x0",
+								"commandlist": "clFIXOFF"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "trigger",
+							"type": "create",
+							"name": "tSTIMON",
+							"par": {
+								"id": 103,
+								"mask": "0x02",
+								"bits": "0x02",
+								"flags": "0x0",
+								"commandlist": "clSTIMON"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "trigger",
+							"type": "create",
+							"name": "tSTIMOFF",
+							"par": {
+								"id": 104,
+								"mask": "0x02",
+								"bits": "0x00",
+								"flags": "0x0",
+								"commandlist": "clSTIMOFF"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "trigger",
+							"type": "create",
+							"name": "tSTIMOFF",
+							"par": {
+								"id": 105,
+								"mask": "0x03",
+								"bits": "0x00",
+								"flags": "0x0",
+								"commandlist": "clALLOFF"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "trigger",
+							"type": "create",
+							"name": "tADVANCE",
+							"par": {
+								"id": 106,
+								"mask": "0x04",
+								"bits": "0x04",
+								"flags": "0x0",
+								"commandlist": "clADVANCE"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "commandlist",
+							"type": "create",
+							"name": "clFIXON",
+							"par": {
+								"command": {
+									"cmd": "onoff",
+									"type": "on",
+									"name": "fixpt",
+									"digout": { "bits":"0x100", "mask":"0x100" }
+								}
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "commandlist",
+							"type": "create",
+							"name": "clFIXOFF",
+							"par": {
+								"command": {
+									"cmd": "onoff",
+									"type": "off",
+									"name": "fixpt",
+									"digout": { "bits":"0x0", "mask":"0x100" }
+								}
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "commandlist",
+							"type": "create",
+							"name": "clSTIMON",
+							"par": {
+								"command": {
+									"cmd": "onoff",
+									"type": "on",
+									"name": "g0",
+									"digout": { "bits":"0x200", "mask":"0x200" }
+								}
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "commandlist",
+							"type": "create",
+							"name": "clSTIMOFF",
+							"par": {
+								"command": {
+									"cmd": "onoff",
+									"type": "off",
+									"name": "g0",
+									"digout": { "bits":"0x0", "mask":"0x200" }
+								}
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "commandlist",
+							"type": "create",
+							"name": "clALLOFF",
+							"par": {
+								"command": {
+									"cmd": "onoff",
+									"type": "off",
+									"name": "fixpt,g0",
+									"digout": { "bits":"0x0", "mask":"0x300" }
+								}
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "commandlist",
+							"type": "create",
+							"name": "clADVANCE",
+							"par": {
+								"command": {
+									"cmd": "script",
+									"type": "advance"
+								}
+							}
+						}
+					}
+				]
+			},
+			"cleanup": {
+				"commands": [
+					{
+						"command": {
+							"cmd": "release",
+							"names": [ "fixpt", "g0" ]
+						}
+					},
+					{
+						"command": {
+							"cmd": "background",
+							"par": {
+								"color": "[0.5,0.5,0.5]"
+							}
+						}
+					}
+				]
+			},
+			"trials": {
+				"*": {
+					"init": {
+						"command": 
+						{
+							"cmd": "grating",
+							"type": "update", 
+							"name": "g0",
+							"par":	{
+								"contrast": [25, 50, 75, 100] 
+							}
+						}
+					}
+				}
+			}				
+		}
+	}
+}
