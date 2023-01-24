@@ -6,3 +6,5 @@ pix/
 debian/
 b/
 bin/
+*/release/
+*/debug/
