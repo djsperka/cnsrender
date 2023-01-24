@@ -1,0 +1,22 @@
+{
+"commands": [
+{
+	"command": {
+		"cmd": "xhair",
+		"type": "create",
+		"name": "xLeft",
+		"viewport": "left",
+		"spec": "0,0,9,20,30,40,8,black,white,45,60,5,blue"
+	}
+},
+{
+	"command": {
+		"cmd": "xhair",
+		"type": "create",
+		"name": "xRight",
+		"viewport": "right",
+		"spec": "0,0,9,50,70,90,16,green,blue,100,150,5,white"
+	}
+}
+]
+}					

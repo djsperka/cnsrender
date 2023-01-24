@@ -1,0 +1,23 @@
+{
+  "script" : {
+    "type": "run", 
+    "par": {
+      "init": {
+        "units": {"type": "length", "default_units": "dg", "screen_resolution": "800x600", "screen_size": "240x180", "screen_distance": 500}
+        },
+      "trials": {
+        "1": {"init": { "dot": { "name": "d", "spec": "0,0,1,red"}}, 
+              "cleanup": { "release": { "name": "d"}}},
+        "2": {"init": { "dot": { "name": "d", "spec": "0,0,1,blue"}}, 
+              "cleanup": { "release": { "name": "d"}}},
+        "3": {"init": { "dot": { "name": "d", "spec": "0,0,1,green"}}, 
+              "cleanup": { "release": { "name": "d"}}},
+        "4": {"init": { "dot": { "name": "d", "spec": "0,0,1,(0/255/255)"}}, 
+              "cleanup": { "release": { "name": "d"}}},
+        "5": {"init": { "dot": { "name": "d", "spec": "0,0,1,(255/255/0)"}}, 
+              "cleanup": { "release": { "name": "d"}}}
+      }
+    }
+  }
+}
+	

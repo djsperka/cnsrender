@@ -1,0 +1,9 @@
+{
+  "command": 
+  {
+    "cmd": "trigger",
+    "type": "fire", 
+	"id": 106
+  }
+}
+

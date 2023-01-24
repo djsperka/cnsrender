@@ -1,0 +1,8 @@
+{
+	"dot": { "name": "d1", "spec": "0,2,1,red,1" },
+	"dot": { "name": "d2", "spec": "2,0,1,red,1" },
+	"dot": { "name": "d3", "spec": "0,-2,1,blue,1" },
+	"dot": { "name": "d4", "spec": "-2,0,1,green,1" }
+}
+
+	

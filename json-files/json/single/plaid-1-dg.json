@@ -1,0 +1,18 @@
+{
+  "units": {
+    "type": "length", 
+	"default_units": "dg",
+	"screen_resolution": "800x600",
+	"screen_size": "240x180",
+	"screen_distance": 500
+  },
+	"plaid": { 
+		"name": "p1", 
+		"position": "0,0",
+		"diameter": "20", 
+		"gratings" : [
+			"-150,0,200,200,125,125,100,.1,.5,0,0,bw,s,e,2"
+			]
+		}
+}
+	

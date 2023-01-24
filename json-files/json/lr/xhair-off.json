@@ -1,0 +1,9 @@
+{
+  "command": 
+  {
+    "cmd": "onoff",
+    "type": "off", 
+	"name": "xLeft,xRight"
+  }
+}
+

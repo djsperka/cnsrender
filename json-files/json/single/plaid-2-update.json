@@ -1,0 +1,10 @@
+{
+	"plaid": { 
+		"name": "p1", "type": "update", 
+		"par": {
+			"position": "5,5",
+			"diameter": "5"
+		}
+	}
+}
+	

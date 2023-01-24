@@ -1,0 +1,8 @@
+The files found here are sample json files. 
+
+Those in the 'any' folder can be used any time; they are independent of the screen configuration.
+
+Those in the 'single' folder can be used when there is a single screen in use. 
+
+Those in the 'lr' folder can be used when dual screens are in use, i.e. when render is invoked 
+with "--ortho-left-right" or "-o" option. 

@@ -1,0 +1,9 @@
+{
+  "units": {"type": "length", "default_units": "dg", "screen_resolution": "800x600", "screen_size": "240x180", "screen_distance": 500},
+  "grating": { "name": "g0", "spec": "-8.5,0,4,4,2,2,100,.1,4,45,0,bw,s,e,2" },
+  "grating": { "name": "g1", "spec": "8.5,0,4,4,0,0,100,.2,3,135,0,bw,q,e,2" },
+  "grating": { "name": "g2", "spec": "0,8.5,4,4,0,0,100,.4,2,225,0,bw,s,e,2" },
+  "grating": { "name": "g3", "spec": "0,-8.5,4,4,0,0,100,.8,1,315,0,bw,q,e,2" },
+  "on": { "name": "g0,g1,g2,g3" }
+}
+	

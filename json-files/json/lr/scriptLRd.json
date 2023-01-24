@@ -1,0 +1,351 @@
+{
+	"command": {
+		"cmd": "script",
+		"type": "run",
+		"name": "tuning-with-donut",
+		"par": {
+			"init": {
+				"commands": [
+					{
+						"command": 
+						{
+							"cmd": "reset"
+						}
+					},
+					{
+						"command": {
+							"cmd": "background",
+							"par": {
+								"color": "black"
+								}
+						}
+					},
+					{
+						"command": 
+						{
+							"cmd": "units",
+							"type": "length", 
+							"default_units": "dg",
+							"screen_resolution": "400x300",
+							"screen_size": "120x177",
+							"screen_distance": 500
+						}
+					},
+					{
+						"command": {
+							"cmd": "dot",
+							"type": "create",
+							"name": "fixptLeft",
+							"viewport": "left",
+							"par": {
+								"diameter": 0.5,
+								"position": "0,0",
+								"depth": 1,
+								"color": "green"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "dot",
+							"type": "create",
+							"name": "fixptRight",
+							"viewport": "right",
+							"par": {
+								"diameter": 0.2,
+								"position": "0,0",
+								"depth": 1,
+								"color": "blue"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "grating",
+							"type": "create",
+							"name": "g0Left",
+							"viewport": "left",
+							"spec": "1,1,200,200,0,0,100,.01,.005,45,0,bw,s,e,2"
+						}
+					},
+					{
+						"command": {
+							"cmd": "donut",
+							"type": "create",
+							"name": "g0Right",
+							"viewport": "right",
+							"spec": "1,1,150,150,50,50,100,.01,.02,135,0,bw,s,e,2"
+						}
+					},
+					{
+						"command": {
+							"cmd": "onoff",
+							"type": "off",
+							"name": "fixptLeft,fixptRight,g0Left,g0Right",
+							"digout": { "bits":"0x0", "mask":"0x700" }
+						}
+					},
+					{
+						"command": {
+							"cmd": "trigger",
+							"type": "create",
+							"name": "tFIXON",
+							"par": {
+								"id": 101,
+								"mask": "0x01",
+								"bits": "0x01",
+								"flags": "0x0",
+								"commandlist": "clFIXON"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "trigger",
+							"type": "create",
+							"name": "tFIXOFF",
+							"par": {
+								"id": 102,
+								"mask": "0x01",
+								"bits": "0x00",
+								"flags": "0x0",
+								"commandlist": "clFIXOFF"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "trigger",
+							"type": "create",
+							"name": "tSTIMON",
+							"par": {
+								"id": 103,
+								"mask": "0x02",
+								"bits": "0x02",
+								"flags": "0x0",
+								"commandlist": "clSTIMON"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "trigger",
+							"type": "create",
+							"name": "tSTIMOFF",
+							"par": {
+								"id": 104,
+								"mask": "0x02",
+								"bits": "0x00",
+								"flags": "0x0",
+								"commandlist": "clSTIMOFF"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "trigger",
+							"type": "create",
+							"name": "tSTIMOFF",
+							"par": {
+								"id": 105,
+								"mask": "0x03",
+								"bits": "0x00",
+								"flags": "0x0",
+								"commandlist": "clALLOFF"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "trigger",
+							"type": "create",
+							"name": "tADVANCE",
+							"par": {
+								"id": 106,
+								"mask": "0x04",
+								"bits": "0x04",
+								"flags": "0x0",
+								"commandlist": "clADVANCE"
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "commandlist",
+							"type": "create",
+							"name": "clFIXON",
+							"par": {
+								"command": {
+									"cmd": "onoff",
+									"type": "on",
+									"name": "fixptLeft,fixptRight",
+									"digout": { "bits":"0x100", "mask":"0x100" }
+								}
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "commandlist",
+							"type": "create",
+							"name": "clFIXOFF",
+							"par": {
+								"command": {
+									"cmd": "onoff",
+									"type": "off",
+									"name": "fixptLeft,fixptRight",
+									"digout": { "bits":"0x0", "mask":"0x100" }
+								}
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "commandlist",
+							"type": "create",
+							"name": "clSTIMON",
+							"par": {
+								"command": {
+									"cmd": "onoff",
+									"type": "on",
+									"name": "g0Left,g0Right",
+									"digout": { "bits":"0x200", "mask":"0x200" }
+								}
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "commandlist",
+							"type": "create",
+							"name": "clSTIMOFF",
+							"par": {
+								"command": {
+									"cmd": "onoff",
+									"type": "off",
+									"name": "g0Left,g0Right",
+									"digout": { "bits":"0x0", "mask":"0x200" }
+								}
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "commandlist",
+							"type": "create",
+							"name": "clALLOFF",
+							"par": {
+								"command": {
+									"cmd": "onoff",
+									"type": "off",
+									"name": "fixptLeft,fixptRight,g0Left,g0Right",
+									"digout": { "bits":"0x0", "mask":"0x300" }
+								}
+							}
+						}
+					},
+					{
+						"command": {
+							"cmd": "commandlist",
+							"type": "create",
+							"name": "clADVANCE",
+							"par": {
+								"command": {
+									"cmd": "script",
+									"type": "advance"
+								}
+							}
+						}
+					}
+				]
+			},
+			"cleanup": {
+				"commands": [
+					{
+						"command": {
+							"cmd": "release",
+							"names": [ "fixptLeft", "fixptRight", "g0Left", "g0Right" ]
+						}
+					},
+					{
+						"command": {
+							"cmd": "background",
+							"par": {
+								"color": "(0.5/0.5/0.5)"
+								}
+						}
+					}
+				]
+			},
+			"trials": {
+				"*": {
+					"init": {
+						"commands": [
+							{ 
+								"command": {
+									"cmd": "donut",
+									"type": "update", 
+									"name": "g0Right",
+									"par":	{
+										"contrast": [25, 50, 75, 100],
+										"orientation": [0, 45, 90, 135, 180, 225, 270, 315],
+										"size": ["50px", "75px", "100px", "125px", "150px"],
+										"tf": [0.0001, 0.0002, 0.0004, 0.0008, 0.0016, 0.0032],
+										"sf": [0.005, 0.01, 0.02],
+										"phase": [0],
+										"from": ["()", "(255,0,0)", "[0,1,0]", "blue"],
+										"to": ["(255)", "(0,255,255)", "[1,0,1]", "green"],
+										"position": [ "(0,0)", "(-2,-2)", "(2,-2)", "(-3,3)", "3,-3"],
+										"isize": [ "40px", "50px", "80px", "100px", "120px"]
+									}
+								}
+							},
+							{ 
+								"command": {
+									"cmd": "grating",
+									"type": "update", 
+									"name": "g0Left",
+									"par":	{
+										"contrast": [25, 50, 75, 100],
+										"orientation": [0, 45, 90, 135, 180, 225, 270, 315],
+										"size": [2, 3, 4, 5, 6, 7, 8],
+										"tf": [0.0001, 0.0002, 0.0004, 0.0008, 0.0016, 0.0032],
+										"sf": [0.005, 0.01, 0.02],
+										"phase": [0],
+										"from": ["()", "(255,0,0)", "[0,1,0]", "blue"],
+										"to": ["(255)", "(0,255,255)", "[1,0,1]", "green"],
+										"position": [ "(0,0)", "(-2,-2)", "(2,-2)", "(-4,4)", "4,-4"]
+									}
+								}
+							},
+							{ 
+								"command": {
+									"cmd": "dot",
+									"type": "update", 
+									"name": "fixptLeft",
+									"par":	{
+										"color": ["red", "(50)", "[1.0]", "[0.7/0.8/0.2]", "(255/255/0)"],
+										"diameter": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6],
+										"position": ["()", "(1,0)", "(-1,0)", "(0,2)", "0,-2", "0,0"]
+									}
+								}
+							},
+							{ 
+								"command": {
+									"cmd": "dot",
+									"type": "update", 
+									"name": "fixptRight",
+									"par":	{
+										"color": ["red", "(50)", "[1.0]", "[0.7/0.8/0.2]", "(255/255/0)"],
+										"diameter": [0.6, 0.5, 0.4, 0.3, 0.2, 0.1],
+										"position": ["()", "(-1,0)", "(1,0)", "(0,-2)", "0,2", "0,0"]
+									}
+								}
+							}						
+						]
+					}
+				}
+			}				
+		}
+	}
+}

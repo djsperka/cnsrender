@@ -1,0 +1,246 @@
+{
+	"script" : {
+		"type": "run",
+		"par": {
+			"init": {
+				"reset": {},
+				"background": { "color": "(127/127/127)" },
+				"units": {"type": "length", "default_units": "dg", "screen_resolution": "1024x768", "screen_size": "240x180", "screen_distance": "700"},
+				"commandlist": {
+					"type": "create",
+					"name": "clOn",
+					"par": {
+						"on": { "name": "stimulus", "digout": { "bits":"0x800", "mask":"0x800" } }
+					}
+				},
+				"commandlist": {
+					"type": "create",
+					"name": "clOff",
+					"par": {
+						"off": { "name": "stimulus", "digout": { "bits":"0x0", "mask":"0x800" } }
+					}
+				},
+				"commandlist": {
+					"type": "create",
+					"name": "clAdvance",
+					"par": {
+						"script" : { "type": "advance" }
+					}
+				},
+				"commandlist": {
+					"type": "create",
+					"name": "clReset",
+					"par": {
+						"reset" : {}
+					}
+				},
+				"trigger": {
+					"type": "create",
+					"name": "trOn",
+					"par": {
+						"id": 101,
+						"mask": "0x04",
+						"bits": "0x04",
+						"flags": "0x0",
+						"commandlist": "clOn"
+					}
+				},
+				"trigger": {
+					"type": "create",
+					"name": "trOff",
+					"par": {
+						"id": 102,
+						"mask": "0x04",
+						"bits": "0x0",
+						"flags": "0x0",
+						"commandlist": "clOff"
+					}
+				},
+				"trigger": {
+					"type": "create",
+					"name": "trAdvance",
+					"par": {
+						"id": 103,
+						"mask": "0x08",
+						"bits": "0x08",
+						"flags": "0x1",
+						"commandlist": "clAdvance"
+					}
+				},
+				"trigger": {
+					"type": "create",
+					"name": "trReset",
+					"par": {
+						"id": 104,
+						"mask": "0x10",
+						"bits": "0x10",
+						"flags": "0x0",
+						"commandlist": "clReset"
+					}
+				}
+			},
+			"trials": {
+                "1": {
+                    "init":
+                    {
+                        "plaid":
+                        {
+                            "name": "stimulus",
+                            "position": "0.0,0.0",
+                            "diameter": "30.0",
+                            "gratings" :
+                            [
+                                "0.0,0.0,30.0,30.0,0.0,0.0,100,0.20,4.00,45,0.0,b,s,e,2"
+                            ]
+                        },
+                        "on": { "name": "stimulus"}
+                    },
+                    "cleanup":
+                    {
+                        "release": { "name": "stimulus"}
+                    }
+                },
+                "2": {
+                    "init":
+                    {
+                        "plaid":
+                        {
+                            "name": "stimulus",
+                            "position": "0.0,0.0",
+                            "diameter": "30.0",
+                            "gratings" :
+                            [
+                                "0.0,0.0,30.0,30.0,0.0,0.0,100,0.20,4.00,0,0.0,b,s,e,2"
+                            ]
+                        },
+                        "on": { "name": "stimulus"}
+                    },
+                    "cleanup":
+                    {
+                        "release": { "name": "stimulus"}
+                    }
+                },
+                "3": {
+                    "init":
+                    {
+                        "plaid":
+                        {
+                            "name": "stimulus",
+                            "position": "0.0,0.0",
+                            "diameter": "30.0",
+                            "gratings" :
+                            [
+                                "0.0,0.0,30.0,30.0,0.0,0.0,100,0.20,4.00,135,0.0,b,s,e,2"
+                            ]
+                        },
+                        "on": { "name": "stimulus"}
+                    },
+                    "cleanup":
+                    {
+                        "release": { "name": "stimulus"}
+                    }
+                },
+                "4": {
+                    "init":
+                    {
+                        "plaid":
+                        {
+                            "name": "stimulus",
+                            "position": "0.0,0.0",
+                            "diameter": "30.0",
+                            "gratings" :
+                            [
+                                "0.0,0.0,30.0,30.0,0.0,0.0,100,0.20,4.00,90,0.0,b,s,e,2"
+                            ]
+                        },
+                        "on": { "name": "stimulus"}
+                    },
+                    "cleanup":
+                    {
+                        "release": { "name": "stimulus"}
+                    }
+                },
+                "5": {
+                    "init":
+                    {
+                        "plaid":
+                        {
+                            "name": "stimulus",
+                            "position": "0.0,0.0",
+                            "diameter": "30.0",
+                            "gratings" :
+                            [
+                                "0.0,0.0,30.0,30.0,0.0,0.0,100,0.20,4.00,135,0.0,b,s,e,2"
+                            ]
+                        },
+                        "on": { "name": "stimulus"}
+                    },
+                    "cleanup":
+                    {
+                        "release": { "name": "stimulus"}
+                    }
+                },
+                "6": {
+                    "init":
+                    {
+                        "plaid":
+                        {
+                            "name": "stimulus",
+                            "position": "0.0,0.0",
+                            "diameter": "30.0",
+                            "gratings" :
+                            [
+                                "0.0,0.0,30.0,30.0,0.0,0.0,100,0.20,4.00,0,0.0,b,s,e,2"
+                            ]
+                        },
+                        "on": { "name": "stimulus"}
+                    },
+                    "cleanup":
+                    {
+                        "release": { "name": "stimulus"}
+                    }
+                },
+                "7": {
+                    "init":
+                    {
+                        "plaid":
+                        {
+                            "name": "stimulus",
+                            "position": "0.0,0.0",
+                            "diameter": "30.0",
+                            "gratings" :
+                            [
+                                "0.0,0.0,30.0,30.0,0.0,0.0,100,0.20,4.00,90,0.0,b,s,e,2"
+                            ]
+                        },
+                        "on": { "name": "stimulus"}
+                    },
+                    "cleanup":
+                    {
+                        "release": { "name": "stimulus"}
+                    }
+                },
+                "8": {
+                    "init":
+                    {
+                        "plaid":
+                        {
+                            "name": "stimulus",
+                            "position": "0.0,0.0",
+                            "diameter": "30.0",
+                            "gratings" :
+                            [
+                                "0.0,0.0,30.0,30.0,0.0,0.0,100,0.20,4.00,45,0.0,b,s,e,2"
+                            ]
+                        },
+                        "on": { "name": "stimulus"}
+                    },
+                    "cleanup":
+                    {
+                        "release": { "name": "stimulus"}
+                    }
+                }
+			}
+		}
+	}
+}

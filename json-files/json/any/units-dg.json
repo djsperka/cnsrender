@@ -1,0 +1,10 @@
+{
+  "units": {
+    "type": "length", 
+	"default_units": "dg",
+	"screen_resolution": "800x600",
+	"screen_size": "240x177",
+	"screen_distance": 500
+  }
+}
+

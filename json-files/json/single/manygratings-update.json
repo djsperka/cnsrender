@@ -1,0 +1,25 @@
+{
+  "grating": { "name": "g1", "type": "update", "par": {
+  								"diameter": 8,
+  								"position": "-4.5,0"
+  								}
+  							},
+  "grating": { "name": "g2", "type": "update", "par": {
+  								"diameter": 5,
+  								"from": "blue",
+  								"to": "green"
+  								}
+  							},
+  "grating": { "name": "g3", "type": "update", "par": {
+  								"position": "0,-6.5",
+  								"diameter": 3,
+  								"contrast": 50
+  								}
+  							},
+  "grating": { "name": "g0", "type": "update", "par": {
+  								"orientation": 75,
+  								"pattern": "q"
+  								}
+  							}
+}
+	

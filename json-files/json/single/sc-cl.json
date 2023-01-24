@@ -1,0 +1,38 @@
+{ 
+	"commandlist": { 
+		"type": "create", 
+		"name": "clOn", 
+		"par": {  
+			"on": { "name": "p,d", "digout": { "bits":"0x100", "mask":"0x700" } }
+			}
+		},
+	"commandlist": { 
+		"type": "create", 
+		"name": "clOff", 
+		"par": {  
+			"off": { "name": "p,d", "digout": { "bits":"0x0", "mask":"0x700" } }
+			}
+		},
+	"trigger": {
+		"type": "create",
+		"name": "trOn",
+		"par": {
+			"id": 101,
+			"mask": "0x01",
+			"bits": "0x01",
+			"flags": "0x0",
+			"commandlist": "clOn"
+			}
+		},
+	"trigger": {
+		"type": "create",
+		"name": "trOff",
+		"par": {
+			"id": 102,
+			"mask": "0x01",
+			"bits": "0x0",
+			"flags": "0x0",
+			"commandlist": "clOff"
+			}
+		}
+}
