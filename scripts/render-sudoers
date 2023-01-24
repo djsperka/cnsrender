@@ -1,0 +1,7 @@
+# /etc/sudoers.d/render-sudoers
+#
+# This file will allow user "ren" to run "run-render", "shutdown", "halt" and "reboot"
+# without using sudo. 
+# It must be installed with mode 0440!
+
+ren	ALL=(ALL) NOPASSWD: /usr/bin/run-render, /usr/bin/render, /sbin/shutdown, /sbin/halt, /sbin/reboot, /usr/bin/vpixx

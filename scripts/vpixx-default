@@ -1,0 +1,15 @@
+# Set VPIXX_ENABLED to anything other than "false" or "no" to have this run at startup/shutdown
+
+VPIXX_ENABLED=false
+
+# VPIXX_START_OPTIONS are appended to invocation of vpixx application on startup.
+# Use '-a' to wake up vpixx
+# Use '-r' to put in rear projection mode
+# Use '-f' to put in front projection mode
+
+VPIXX_START_OPTIONS='-a -r'
+
+# VPIXX_STOP_OPTIONS are appended on stop.
+# Use '-s' to put vpixx to sleep.
+
+VPIXX_STOP_OPTIONS='-s'

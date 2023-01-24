@@ -1,0 +1,53 @@
+#!/bin/bash
+
+# render-session
+#
+# This script simply creates a named pipe and blocks until something is read on it. 
+# It is intended to be used as an xsession for a render 
+# machine. On such a machine we want our X session to be empty - allowing for remote
+# ssh logins to start render (and view its logging output). This script
+# should be called from the .xinitrc script in the home dir. 
+# 
+# Note that if the X session is killed the pipe will remain in the dir where it
+# is created. The startup here attempts to clean up. 
+
+function usage
+{
+    echo "usage: render-session [-k | --kill]"
+}
+
+PIPE=/tmp/render-session-pipe	# the named pipe will have this name
+
+dokill=
+while [ "$1" != "" ]; do
+    case $1 in
+        -k | --kill )           dokill=1
+                                ;;
+        * )                     usage
+                                exit 1
+    esac
+    shift
+done
+
+if [ "$dokill" = "1" ]; then
+	if [ -p $PIPE ]; then
+		echo "1" >> $PIPE
+	else
+		echo "Cannot kill render-session: no pipe exists at $PIPE"
+		exit 1
+	fi
+else
+
+	# Create pipe if needed
+	if [ ! -p $PIPE ]; then
+		mkfifo $PIPE
+	fi
+
+	# Now wait to read anything written to the pipe.
+	read SIGNAL < $PIPE
+	echo "render-session ending with signal $SIGNAL" > /dev/stderr
+
+	# clean up
+	rm $PIPE
+fi
+exit 0

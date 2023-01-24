@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=render
+Comment=X session for running render
+Exec=/usr/bin/render-session
+Type=Application

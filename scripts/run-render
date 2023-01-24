@@ -1,0 +1,10 @@
+# Do this to ensure things run OK when called from an ssh session.
+export DISPLAY=:0
+# this is only useful on machines with an NVIDIA card
+export __GL_SYNC_TO_VBLANK=1
+
+# run render full screen, listen on port 2000. 
+# Input queue interval 200us. 
+# Additional commandline args (e.g. run-render -l 0 -V) are appended here
+# (in this example, the "-l 0 -V" are appended). 
+render $*
