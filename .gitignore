@@ -10,3 +10,5 @@ bin/
 */debug/
 *.o
 *.ko
+rendio/.rendio*
+rendio/.tmp_versions
