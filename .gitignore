@@ -8,3 +8,5 @@ b/
 bin/
 */release/
 */debug/
+*.o
+*.ko
